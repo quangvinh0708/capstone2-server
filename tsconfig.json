@@ -22,6 +22,7 @@
             "@db": ["src/prisma"],
             "@modules/*": ["src/modules/*"],
             "@common/*": ["src/common/*"]
-        }
+        },
+        "esModuleInterop": true
     }
 }

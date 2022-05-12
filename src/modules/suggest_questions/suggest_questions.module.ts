@@ -7,12 +7,14 @@ import {
     SuggestQuestionSchema,
 } from './schemas/suggestQuestion.schema';
 import { Question, QuestionSchema } from './schemas/question';
+import { User, UserSchema } from '@modules/suggest_questions/schemas/user';
 
 @Module({
     imports: [
         MongooseModule.forFeature([
             { name: Suggest_Question.name, schema: SuggestQuestionSchema },
             { name: Question.name, schema: QuestionSchema },
+            { name: User.name, schema: UserSchema },
         ]),
     ],
     controllers: [SuggestQuestionsController],

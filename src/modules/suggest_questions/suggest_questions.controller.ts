@@ -28,6 +28,22 @@ export class SuggestQuestionsController {
         return x;
     }
 
+    @Post('generate-suggest-questions')
+    async generateSuggestQuestions(@Body() payload: Question) {
+        const x = await this.suggestQuestionsService.generateSuggestQuestions(
+            payload,
+        );
+        return x;
+    }
+
+    @Post('save-and-send')
+    async saveAndSendToAllUser(@Body() createSuggestQuestionDto: Question) {
+        const x = await this.suggestQuestionsService.saveAndSendToAllUser(
+            createSuggestQuestionDto,
+        );
+        return x;
+    }
+
     @Get()
     findSomeByKeywordAndFacet(@Query() payload: GetSuggestQuestionDto) {
         return this.suggestQuestionsService.findSomeByKeywordAndFacet(payload);
@@ -35,7 +51,7 @@ export class SuggestQuestionsController {
 
     @Get(':id')
     findOne(@Param('id') id: string) {
-        return this.suggestQuestionsService.findOne(+id);
+        // return this.suggestQuestionsService.findOne(+id);
     }
 
     @Patch(':id')

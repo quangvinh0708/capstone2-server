@@ -11,6 +11,9 @@ export class Question {
     question: string;
 
     @Prop()
+    trait: string;
+
+    @Prop()
     big5EnvIndicator: string;
 
     @Prop()
@@ -37,25 +40,11 @@ export class Question {
     )
     point: { pointHigh: number; pointMedium: number; pointLow: number };
 
-    @Prop(
-        raw({
-            label: { type: String },
-            parent: {
-                type: {
-                    label: { type: String },
-                    _id: { type: sc.Types.ObjectId },
-                },
-            },
-        }),
-    )
-    facet: { label: string; parent: { label: string } };
+    @Prop()
+    facet: string;
 
-    @Prop(
-        raw({
-            label: { type: String },
-        }),
-    )
-    keyword: { label: string };
+    @Prop()
+    keyword: string;
 }
 
 export const QuestionSchema = SchemaFactory.createForClass(Question);
