@@ -62,8 +62,8 @@ export class SuggestQuestionsService {
     async saveAndSendToAllUser(createSuggestQuestionDto: Question) {
         const { id, question } = createSuggestQuestionDto;
         // const questionsFounded = await this.question.findOne({ id }).exec();
-        delete createSuggestQuestionDto.facet;
-        delete createSuggestQuestionDto.keyword;
+
+        console.log('createSuggestQuestionDto', createSuggestQuestionDto);
 
         const data = {
             key: 'MBe2IdLb-9dhasuidad02316156156552352sdggsdgsdaga2352bgdasasfas',
