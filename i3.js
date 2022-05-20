@@ -19,11 +19,13 @@ async function asynchronous3() {
 }
 
 async function getABC() {
-    let A = await asynchronous1();
-    let B = await asynchronous2();
-    let C = await asynchronous3();
+    // let A = await asynchronous1();
+    // let B = await asynchronous2();
+    // let C = await asynchronous3();
+    await Promise.all([asynchronous1(), asynchronous2(), asynchronous3()]);
 
-    return A * B * C;
+    // return A * B * C;
 }
 
 console.log(getABC());
+console.log('ABC');

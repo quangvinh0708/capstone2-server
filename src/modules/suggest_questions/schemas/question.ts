@@ -23,7 +23,7 @@ export class Question {
         {
             Openness: { type: String },
             _id: { type: sc.Types.ObjectId },
-            Conciencetious: { type: String },
+            Conscientiousness: { type: String },
             Extraversion: { type: String },
             Agreeable: { type: String },
             Neuroticism: { type: String },
