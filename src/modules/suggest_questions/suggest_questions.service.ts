@@ -35,7 +35,12 @@ export class SuggestQuestionsService {
                 HttpStatus.CONFLICT,
             );
         }
-        return await new this.question(createSuggestQuestionDto).save();
+        const x = await new this.question(createSuggestQuestionDto).save();
+        console.log('XXXX', x);
+        return await this.question.findByIdAndUpdate(
+            { _id: x._id },
+            { id: x._id },
+        );
     }
 
     async generateSuggestQuestions(payload: any) {
